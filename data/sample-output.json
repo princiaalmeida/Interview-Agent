@@ -1,0 +1,60 @@
+{
+  "sessionId": "eval_1730000000000_abc123xyz",
+  "agentReports": {
+    "resume": {
+      "agentName": "Resume Verification Agent",
+      "credibilityScore": 7,
+      "claims": [
+        { "claim": "5 years experience", "verified": true, "evidence": "Transcript corroborates TechCorp tenure" },
+        { "claim": "Led team of 8", "verified": false, "evidence": "Transcript says 'worked with team' not 'led'" }
+      ],
+      "vagueAchievements": ["Improved system performance by 40%", "Scaled infrastructure"],
+      "verdict": "HIRE",
+      "confidence": 7
+    },
+    "technical": {
+      "agentName": "Technical Depth Evaluator",
+      "conceptualDepthScore": 6,
+      "systemDesignClarity": 5,
+      "memorizedAnswerSignals": ["Standard hash map answer for URL shortener"],
+      "verdict": "HIRE",
+      "confidence": 6
+    },
+    "contradiction": {
+      "agentName": "Contradiction Detection Agent",
+      "contradictionSeverityScore": 3,
+      "contradictions": [
+        {
+          "resumeClaim": "Led team of 8 engineers",
+          "transcriptStatement": "I worked with the team",
+          "severity": "medium",
+          "explanation": "Leadership scope may be overstated"
+        }
+      ],
+      "verdict": "HIRE",
+      "confidence": 8
+    },
+    "behavioral": {
+      "agentName": "Behavioral & Communication Agent",
+      "clarityScore": 8,
+      "communicationScore": 8,
+      "leadershipSignals": ["Used STAR format", "Took ownership of miscommunication"],
+      "verdict": "HIRE",
+      "confidence": 8
+    }
+  },
+  "debateTrace": [
+    { "round": 1, "agentName": "Resume Verification Agent", "action": "initial", "content": "Credibility: 7/10. Verdict: HIRE." },
+    { "round": 2, "agentName": "Contradiction Detection Agent", "action": "challenge", "content": "Resume Verification: Please clarify leadership claim.", "targetAgent": "Resume Verification Agent" },
+    { "round": 2, "agentName": "Resume Verification Agent", "action": "defend", "content": "Leadership may include informal influence; transcript does not contradict directly." }
+  ],
+  "finalDecision": "HIRE",
+  "confidence": 72,
+  "summary": "Committee consensus: HIRE. Strong behavioral and technical scores. One contradiction on leadership scope noted but not disqualifying.",
+  "disagreements": ["Resume claims 'led' vs transcript 'worked with' - medium severity"],
+  "reasoningTrace": [
+    "All four agents initially HIRE.",
+    "Debate triggered due to contradiction on leadership.",
+    "Moderator: Inconsistency noted; overall recommendation HIRE."
+  ]
+}
